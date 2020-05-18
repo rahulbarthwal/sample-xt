@@ -32,14 +32,6 @@ The entrypoint for the client-side code (`src/index.js`) first checks if the cur
 
 As with all server-rendered React apps you'll want to be cautious of using browser APIs in your components -- they don't exist when rendering on the server and will throw errors unless you handle them gracefully (I've found some success with using `if (typeof myBrowserAPI !== 'undefined') { ... }` checks when necessary, but it feels dirty so I try to avoid when possible). The one exception to this is the `componentDidMount()` method for class components and `useEffect()` & `useLayoutEffect()` hooks, which are only run on the client.
 
-## "How do I ...?"
-
-#### Fetch data on the server before rendering?
-
-_The client-side sample code to handle is a little experimental at the moment._
-
-Sometimes you'll want to make API calls on the server to fetch data **before** rendering the page. In those cases you can use a static `fetchData()` method on any component. That method will be called with the `req` object from express, and it should return a Promise that resolves to an object, which will be merged with other `fetchData()` return values into a single object. That object of server data is injected into the server HTML, added to `window.__SERVER_DATA__`, and used to hydrate the client via the `<ServerDataProvider />` context provider. Components can use the `useServerData()` hook to grab the data object. **IMPORTANT:** Your component must handle the case where the server data property it's reading from is `undefined`.
-
 ## Roadmap
 
 - [ ] Run server via webpack in dev mode so we can use more loaders
