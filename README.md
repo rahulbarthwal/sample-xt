@@ -40,20 +40,7 @@ _The client-side sample code to handle is a little experimental at the moment._
 
 Sometimes you'll want to make API calls on the server to fetch data **before** rendering the page. In those cases you can use a static `fetchData()` method on any component. That method will be called with the `req` object from express, and it should return a Promise that resolves to an object, which will be merged with other `fetchData()` return values into a single object. That object of server data is injected into the server HTML, added to `window.__SERVER_DATA__`, and used to hydrate the client via the `<ServerDataProvider />` context provider. Components can use the `useServerData()` hook to grab the data object. **IMPORTANT:** Your component must handle the case where the server data property it's reading from is `undefined`.
 
-Check out `src/components/Home.js` for an example.
-
-#### Add Redux?
-
-Adding `redux` takes a few steps, but shouldn't be too painful; start by replacing the `<ServerDataProvider />` with the `<Provider />` from `react-redux` on both the server and the client. You can then pass the `store` as an argument to the static `fetchData()` method (in `server/fetchDataForRender.js`) and dispatch actions inside of `fetchData()`. Finally you'll need to pass the `store`'s current state to the index.html generator function so you can grab it on the client and hydrate the client-side `store`.
-
-## Current Quirks
-
-- There are console message saying "componentWillMount has been renamed, and is not recommended for use." due to the react-loadable package. Hopefully React will support SSR with Suspense soon, but until then react-loadable works great and the console messages should not affect your app.
-- This project does not have a webpack configuration that allows for the use of `url-loader` or `file-loader` (so no `import src from 'my-img.svg'`). Instead it relies on serving static assets via the `public/` directory. See `src/components/about/About.js` for a reference on how to work with assets in your app.
-
 ## Roadmap
 
 - [ ] Run server via webpack in dev mode so we can use more loaders
-- [x] Intelligently resolve CSS modules by looking for a `.module.s?css` file extension
-- [ ] Add example app that handles authentication
-- [x] Migrate to `react-testing-library` instead of `enzyme`
+- [ ] Add redux
