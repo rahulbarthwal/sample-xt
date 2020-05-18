@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
+@font-face {
+    font-family: 'Roboto-Medium';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto-Medium'), local('Roboto-Medium'),
+        url('../assets/fonts/Roboto-Medium.ttf') format('truetype'),
+  }
+
+@font-face {
+    font-family: 'Roboto-Light';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto-Light'), local('Roboto-Light'),
+        url('../assets/fonts/Roboto-Light.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto-Bold'), local('Roboto-Bold'),
+        url('../assets/fonts/Roboto-Bold.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Roboto-Regular'), local('Roboto-Regular'),
+        url('../assets/fonts/Roboto-Regular.ttf') format('truetype'),
+}

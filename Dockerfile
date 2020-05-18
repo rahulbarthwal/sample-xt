@@ -1,7 +1,7 @@
 # build ===============================
 FROM node:10 as build
 
-WORKDIR /react-ssr-boilerplate
+WORKDIR /sample-xt
 
 COPY package*.json ./
 
@@ -14,9 +14,9 @@ RUN npm run build
 # run ===============================
 FROM node:10-alpine as run
 
-WORKDIR /react-ssr-boilerplate
+WORKDIR /sample-xt
 
-COPY --from=build /react-ssr-boilerplate .
+COPY --from=build /sample-xt .
 
 EXPOSE 3000
 

@@ -49,6 +49,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "chalk": "^2.4.2",
     "chokidar": "^3.0.2",
+    "classnames": "^2.2.6",
     "compression": "^1.7.4",
     "core-js": "^3.2.1",
     "css-loader": "^3.2.0",
@@ -87,6 +88,7 @@
     "react-router-dom": "^5.0.1",
     "react-ssr-prepass": "^1.0.6",
     "react-test-renderer": "^16.9.0",
+    "request": "^2.88.2",
     "response-time": "^2.3.2",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
@@ -96,5 +98,9 @@
     "webpack-hot-middleware": "^2.25.0",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.5.0",
+    "file-loader": "^6.0.0"
   }
 }

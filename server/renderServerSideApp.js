@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import Loadable from 'react-loadable';
 import { getBundles } from 'react-loadable/webpack';
 
-import App from '../src/components/App';
+import App from '../src/App';
 import { fetchDataForRender } from './fetchDataForRender';
 import { indexHtml } from './indexHtml';
 import stats from '../build/react-loadable.json';

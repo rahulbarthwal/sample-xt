@@ -7,7 +7,7 @@ import responseTime from 'response-time';
 import bodyParser from 'body-parser';
 
 import { renderServerSideApp } from './renderServerSideApp';
-import { todoRoutes } from './todoApi';
+import { Routes } from './api';
 
 const { PUBLIC_URL = '' } = process.env;
 
@@ -37,7 +37,7 @@ app.use(
 app.use(morgan('tiny'));
 
 // Demo API endpoints
-app.use(todoRoutes());
+app.use(Routes());
 
 app.use(
   responseTime((_req, res, time) => {

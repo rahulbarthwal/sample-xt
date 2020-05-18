@@ -1,0 +1,207 @@
+.character-list{
+    flex-direction: row;
+    .filter{
+        &-container {
+            min-width: 25%;
+        }
+        &-header{
+            font-size: 1.5rem;
+        }
+        &-box{
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid $black;
+            max-width: 90%;
+            min-height: 11rem;
+
+            .header{
+                font-size: 1.5rem;
+                font-family: Roboto-Bold;
+            }
+            .list{
+                margin-top: 1rem;
+            }
+        }
+    }
+    .page-container{
+        width: 75%;
+        .selected-filter-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .selected-filter{
+            .header{
+                font-size: 1.5rem;
+            }
+        }
+        .selected-filter-list{
+            margin-top: .5rem;
+            .item{
+                text-transform: capitalize;
+                background: grey;
+                display: inline-block;
+                min-width: 85px;
+                min-height: 30px;
+                text-align: center;
+                padding: 0.2rem;
+                border-radius: 5px;
+                color: white;
+                margin-right: 1rem;
+            }
+            .item:after{
+                margin-left: .5rem;
+                content: 'X';
+            }
+        }
+        .custom-filter-container{
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .search-box{
+                &-input{
+                    display: flex;
+                    justify-content: space-between;
+                    .serach-field{
+                        border: 1px solid black;
+                        border-radius: 5px;
+                        margin-right: 2rem;
+                    }
+                    .serach-button{
+                        border: 1px solid black;
+                        border-radius: 5px;
+                        background: $gray-light;
+                    }
+                }
+            }
+            .sort-box{
+               select{
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    background: $gray-light;
+               }
+            }
+        }
+        .character-list-container{
+            display: flex;
+            background: black;
+            // height: 29rem;
+            overflow-x: scroll;
+            flex-wrap: wrap;
+            .character-list{
+                width: 25%;
+                padding: .5rem;
+                .character-image{
+                    min-height: 15.125rem;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    .desc{
+                        position: relative;
+                        min-height: 4rem;
+                        padding: .5rem;
+                        top: calc(15.125rem - 4rem);
+                        color: white;
+                        background: #0000007a;
+                    }
+                }
+                .character-details{
+                    background: #444242;
+                    padding: 1rem;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    min-height: 46%;
+                    .details-list{
+                        min-height: 2rem;
+                        padding: .5rem;
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: .6rem;
+                        border-bottom: 1px solid #7b7575;
+                        align-items: center;
+                        .key{
+                            color: white;
+                            text-transform: uppercase;
+                            max-width: 40%;
+                        }
+                        .value{
+                            word-break: break-word;
+                            text-align: right;
+                            color:orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include media-breakpoint-down(lg) {
+    .character-list{
+        .page-container{
+            .character-list-container{
+                .character-list{
+                    .character-image{
+                        .desc{
+                            font-size: .8rem;
+                        }
+                    }
+                    .character-details{
+                        padding: .7rem;
+                        .details-list{
+                            font-size: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .character-list{
+        flex-direction: column;
+        .filter{
+            &-container {
+                min-width: 100%;
+            }
+        }
+        .page-container{
+            min-width: 100%;
+            .custom-filter-container{
+                flex-wrap: wrap;
+                .search-box{
+                    width:100%;
+                    &-input{
+                        margin-bottom: 1rem;
+                    }
+                }
+                .sort-box{
+                    width:100%;
+                    #sort-type{
+                        width:100%;
+                    }
+                }
+            }
+            .character-list-container{
+                //height: 43.5rem;
+                .character-list{
+                    width: 50%;
+                    .character-image{
+                        min-height: 9.187rem;
+                        .desc{
+                            font-size: .6rem;
+                            min-height: 3rem;
+                            top: calc(9.187rem - 3rem);
+                        }
+                    }
+                    .character-details{
+                        min-height: 55%;
+                        padding: .5rem;
+                        .details-list{
+                            font-size: .44rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

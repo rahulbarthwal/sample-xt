@@ -137,7 +137,10 @@ module.exports = function(envType) {
           'sass-loader',
           'import-glob-loader'
         ].filter(Boolean)
-      }
+      },
+
+      //Fonts
+      { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: 'file-loader' }
     ].filter(Boolean)
   };
 
