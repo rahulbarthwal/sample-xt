@@ -15,6 +15,7 @@ const CharacterListPage = () => {
     } else {
       const filter = filters[type];
       filter.splice(filter.indexOf(id), 1);
+      filters[type].length === 0 && delete filters[type];
     }
     setFilters({ ...filters });
     api.characterList
