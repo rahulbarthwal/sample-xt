@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 const Head = () => {
   return (
     <Helmet>
-      <title>React SSR Boilerplate</title>
+      <title>Rick & Monty Characters</title>
 
       <meta charSet="UTF-8" />
       <meta
@@ -14,7 +14,7 @@ const Head = () => {
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta
         name="description"
-        content="Boilerplate for React apps with routing & server side rendering"
+        content="React apps with routing & server side rendering"
       />
 
       <link
